@@ -1,56 +1,31 @@
-idade = prompt("Digite a Sua IDADE:");
-if (idade < 18) {
-  alert("Voce não pode jogar!! Volte quando completar 18 anos...");
-}
+function jogar() {
+  let idade = prompt("Digite a Sua IDADE:");
+  
+  if (idade < 18) {
+    alert("Você não pode jogar!! Volte quando completar 18 anos...");
+    return; // Para o jogo aqui se o jogador for menor de idade
+  }
 
-// alert("O jogo VAI COMECAR")
+  let escolhaJogador = prompt("Digite 1-Pedra, 2-Papel ou 3-Tesoura?");
+  let escolhaComputador = Math.floor(Math.random() * 3) + 1;
 
-if (idade >= 18) {
-  escolhaJogador = prompt("Digite 1-Pedra, 2-Papel ou 3-Tesoura?");
-  escolhaComputador = Math.floor(Math.random() * 3) + 1;
-  console.log("escolhaComputador");
-  // Jogador Pedra, Computador Pedra --> empate!!
-  // Jogador Tesoura, Computador Tesoura --> empate!!
-  // Jogador Papel, Computador Papel --> empate!!
+  console.log("Escolha do Computador:", escolhaComputador);
 
   if (escolhaJogador == escolhaComputador) {
     alert("EMPATE!!");
+  } else if (escolhaJogador == 1 && escolhaComputador == 2) {
+    alert("Computador VENCEU, escolheu PAPEL!");
+  } else if (escolhaJogador == 1 && escolhaComputador == 3) {
+    alert("Jogador VENCEU, computador escolheu TESOURA!");
+  } else if (escolhaJogador == 2 && escolhaComputador == 1) {
+    alert("Jogador VENCEU, computador escolheu PEDRA!");
+  } else if (escolhaJogador == 2 && escolhaComputador == 3) {
+    alert("Computador VENCEU, escolheu TESOURA!");
+  } else if (escolhaJogador == 3 && escolhaComputador == 1) {
+    alert("Computador VENCEU, escolheu PEDRA!");
+  } else if (escolhaJogador == 3 && escolhaComputador == 2) {
+    alert("Jogador VENCEU, computador escolheu PAPEL!");
+  } else {
+    alert("Opção inválida! Escolha 1, 2 ou 3.");
   }
-
-  if (escolhaJogador == 1) {
-    if (escolhaComputador == 2) {
-      // Jogador Pedra, Computador Papel --> Computador vence!!
-      alert("Computador VENCEU, escolheu PAPEL!");
-    }
-    if (escolhaComputador == 3) {
-      // Jogador Pedra, Computador Tesoura --> Jogador vence!!
-      alert("Jogador VENCEU, computador escolheu TESOURA!");
-    }
-  }
-
-  // Jogador Tesoura, Computador Pedra --> Computador vence!!
-  // Jogador Tesoura, Computador Papel --> Jogador vence!!
-  if (escolhaJogador == 2) {
-    if (escolhaComputador == 1) {
-      // Jogador Papel, Computador Pedra --> Jogador vence!!
-      alert("Jogador VENCEU, computador escolheu PEDRA!");
-    }
-    if (escolhaComputador == 3) {
-      // Jogador Papel, Computador Tesoura --> Computador vence!!
-      alert("Computador VENCEU, escolheu TESOURA!");
-    }
-  }
-  
-  if(escolhaJogador == 3) {
-    if(escolhaComputador == 1) {
-      // Jogador Tesoura, Computador Pedra --> Computador vence!!
-      alert("Computador VENCEU, escolheu PEDRA!")
-    }
-    if(escolhaComputador == 2) {
-      // Jogador Tesoura, Computador papel --> Jogador vence!!
-      alert("Jogador VENCEU, computador escolheu PAPEL!")
-    }
-  }
-  // Jogador Papel, Computador Pedra --> Jogador vence!!
-  // Jogador Papel, Computador Tesoura --> Computador vence!!
 }
