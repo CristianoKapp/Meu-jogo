@@ -60,3 +60,16 @@ function atualizarPlacar() {
 
 // Atualizar o placar ao carregar a página
 document.addEventListener("DOMContentLoaded", atualizarPlacar);
+
+function resetarPlacar() {
+    // Zerar as variáveis do placar
+    placarJogador = 0;
+    placarComputador = 0;
+
+    // Remover do localStorage
+    localStorage.setItem("placarJogador", 0);
+    localStorage.setItem("placarComputador", 0);
+
+    // Atualizar a exibição do placar
+    atualizarPlacar();
+}
